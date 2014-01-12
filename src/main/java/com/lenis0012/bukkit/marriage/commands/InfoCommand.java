@@ -16,33 +16,33 @@ public class InfoCommand extends CommandBase {
 		ChatColor l = ChatColor.GREEN;
 		ChatColor r = ChatColor.RED;
 		inform(sender, g + "==========-{"+l+" Marriage "+g+"}-==========");
-		inform(sender, g + "Version: "+l+plugin.getDescription().getVersion());
-		inform(sender, g + "Authors: "+l+plugin.getDescription().getAuthors().toString().replace("[", "").replace("]", ""));
-		inform(sender, l + "/marry <player> "+g+"- Marry a player");
-		inform(sender, l + "/marry accept "+g+"- Accept a marriage request");
-		inform(sender, l + "/marry divorce "+g+"- Divorce your partner");
-		inform(sender, l + "/marry list "+g+"- See all married players");
-		inform(sender, l + "/marry tp "+g+"- Teleport to your partner");
-		inform(sender, l + "/marry gift "+g+"- Gift your partner the item in your hand");
-		inform(sender, l + "/marry chat "+g+"- Private chat with your partner");
-		inform(sender, l + "/marry sethome "+g+"- Set your marriage home");
-		inform(sender, l + "/marry home "+g+"- Go to your marriage home");
-		inform(sender, l + "/marry seen - Check your partners last login");
+		inform(sender, g + "Версия: "+l+plugin.getDescription().getVersion());
+		inform(sender, g + "Авторы: "+l+plugin.getDescription().getAuthors().toString().replace("[", "").replace("]", ""));
+		inform(sender, l + "/marry <игрок> "+g+"- Жениться/Выйти замуж за игрока");
+		inform(sender, l + "/marry accept "+g+"- Принять предложение партнёра");
+		inform(sender, l + "/marry divorce "+g+"- Развестить с Вашим партнёром");
+		inform(sender, l + "/marry list "+g+"- Показать все пары");
+		inform(sender, l + "/marry tp "+g+"- Телепортироваться к Вашему партнёру");
+		inform(sender, l + "/marry gift "+g+"- Подарить партнёру предмет в руке");
+		inform(sender, l + "/marry chat "+g+"- Приватный чат с Вашим партнёром");
+		inform(sender, l + "/marry sethome "+g+"- Установить точку совместного дома");
+		inform(sender, l + "/marry home "+g+"- Переместится в Ваш совместный дом");
+		inform(sender, l + "/marry seen - Проверить последний онлайн Вашего партнёра");
 		if(sender.hasPermission("marry.reload") || isAdmin) {
-			inform(sender, l + "/marry reload"+g+" - Reload all config files");
+			inform(sender, l + "/marry reload"+g+" - Перезагружает все файлы конфигураций");
 		} if(plugin.getConfig().getBoolean("settings.enable-chatspy") && (sender.hasPermission("marry.chatspy") || isAdmin)) {
-			inform(sender, l + "/marry chatspy - View marry chat");
+			inform(sender, l + "/marry chatspy - Показывает все приватные чаты");
 		}
 		
-		inform(sender, l + "Crouch + Right click"+g+" - Kiss your partner");
+		inform(sender, l + "Присесть + Правый клик"+g+" - Чмокнуть партнёра :)");
 		
 		if(this.isPlayer()) {
 			Player player = (Player) sender;
 			MPlayer mp = plugin.getMPlayer(player);
 			if(mp.isMarried()) {
-				inform(sender, "Married: "+l+mp.getPartner());
+				inform(sender, "Партнёр: "+l+mp.getPartner());
 			}else {
-				inform(sender, "Married: "+r+"No");
+				inform(sender, "Партнёр: "+r+"Нет");
 			}
 		}
 	}

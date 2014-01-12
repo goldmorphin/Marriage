@@ -51,11 +51,11 @@ public class Marriage extends JavaPlugin {
 		PluginManager pm = this.getServer().getPluginManager();
 		
 		if(this.validVersion(COMPAT_VERSION)) {
-			log.info("[Marriage] Running on nms path: " + COMPAT_VERSION);
+			log.info("[Marriage] Запускаюсь на nms path: " + COMPAT_VERSION);
 		} else {
-			log.severe("[Marriage] Marriage is not compatible with the version of minecraft you are using!");
-			log.severe("Marriage kissing will be disabled!");
-			IS_COMPATIBLE = false;
+			log.severe("[Marriage] Marriage не совместим с версией Minecraft, которую Вы используете!");
+			log.severe("Marriage поцелуйчики отключены :(");
+			IS_COMPATIBLE = true;
 		}
 		
 		//register events/commands
@@ -64,9 +64,9 @@ public class Marriage extends JavaPlugin {
 		
 		//setup config.yml
 		config.addDefault("update-checker", true);
-		config.addDefault("settings.private-chat.format", "&a[Partner] &7{Player}&f: &a{Message}");
+		config.addDefault("settings.private-chat.format", "&a[Партнёр] &7{Player}&f: &a{Message}");
 		config.addDefault("settings.chat-prefix.use", true);
-		config.addDefault("settings.chat-prefix.format", "&4&l<3&r {OLD_FORMAT}");
+		config.addDefault("settings.chat-prefix.format", "&4&l♥&r {OLD_FORMAT}");
 		config.addDefault("settings.request-expire", 60);
 		config.addDefault("settings.enable-chatspy", true);
 		config.addDefault("price.{command name}", 10.0);
@@ -89,7 +89,7 @@ public class Marriage extends JavaPlugin {
 			Metrics metrics = new Metrics(this);
 			metrics.start();
 		} catch(Exception e) {
-			this.getLogger().info("[Marriage] Failed sending stats to mcstats.org");
+			this.getLogger().info("[Marriage] Ошибка отправки статистики на mcstats.org");
 		}
 		
 		//Load update checker
@@ -100,7 +100,7 @@ public class Marriage extends JavaPlugin {
 		if(vault != null) {
 			if(this.setupEconomy()) {
 				String s = economy.getName();
-				log.info("[Marriage] Hooked with "+s+" using Vault");
+				log.info("[Marriage] Экономика через "+s+" используя Vault");
 				eco = true;
 			}
 		}
@@ -179,7 +179,7 @@ public class Marriage extends JavaPlugin {
 			try {
 				file.createNewFile();
 			} catch (IOException e) {
-				log.log(Level.SEVERE, "[Marriage] Could not create data file for player '" +name + "'", e);
+				log.log(Level.SEVERE, "[Marriage] Не могу создать файл данных для игрока '" +name + "'", e);
 			}
 		}
 		
@@ -215,7 +215,7 @@ public class Marriage extends JavaPlugin {
 	    } try {
 	        getCustomConfig().save(customConfigFile);
 	    } catch (IOException ex) {
-	        this.getLogger().log(Level.SEVERE, "Could not save config to " + customConfigFile, ex);
+	        this.getLogger().log(Level.SEVERE, "Не могу сохранить файл " + customConfigFile, ex);
 	    }
 	}
 	

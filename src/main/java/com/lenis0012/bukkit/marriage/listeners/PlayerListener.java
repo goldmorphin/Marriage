@@ -54,7 +54,7 @@ public class PlayerListener implements Listener {
 			format = plugin.fixColors(format);
 			partner.sendMessage(format);
 			player.sendMessage(format);
-			plugin.getLogger().info("[Marriage] Chat: "+pname+": "+message);
+			plugin.getLogger().info("[Marriage] Чат: "+pname+": "+message);
 			
 			//Send to chatspy
 			for(Player p : Bukkit.getOnlinePlayers()) {
@@ -99,8 +99,8 @@ public class PlayerListener implements Listener {
 				Player target = (Player) entity;
 				String tname = target.getName();
 				if(mp.getPartner().equals(tname)) {
-					player.sendMessage(ChatColor.GREEN + "You have kissed your partner!");
-					target.sendMessage(ChatColor.GREEN + "Your partner has kissed you!");
+					player.sendMessage(ChatColor.GREEN + "Ты поцеловал своего партнёра!");
+					target.sendMessage(ChatColor.GREEN + "Твой партнёр чмокнул тебя <3");
 					PacketUtil.createHearts(target, target.getLocation());
 					PacketUtil.createHearts(player, target.getLocation());
 					ingored.put(pname, System.currentTimeMillis() + 1500L);
@@ -133,12 +133,12 @@ public class PlayerListener implements Listener {
 
 				@Override
 				public void run() {
-					player.sendMessage("\247eA new \247a"
+					player.sendMessage("\247eНовая \247a"
 							+ updater.getLatestType().toString().toLowerCase()
-							+ " \247ebuild for Marriage was found, \247a"
+							+ " \247eверсия Marriage доступна! \247a"
 							+ updater.getLatestName() + " \247efor \247a"
 							+ updater.getLatestGameVersion()
-							+ "\247e. Please check BukkitDev!");
+							+ "\247e. Пожалуйста проверьте BukkitDev!");
 				}
 			}, 30L);
 		}

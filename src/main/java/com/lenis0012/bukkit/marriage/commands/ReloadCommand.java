@@ -12,17 +12,17 @@ public class ReloadCommand extends CommandBase {
 	@Override
 	public void perform(CommandSender sender, String[] args) {
 		plugin.reloadConfig();
-		inform(sender, "Reloaded config.yml!");
+		inform(sender, "Перезагрузка config.yml!");
 		plugin.reloadCustomConfig();
-		inform(sender, "Reloaded data.yml!");
+		inform(sender, "Перезагрузка data.yml!");
 		LangConfig.get().reload();
-		inform(sender, "Reloaded lang.yml!");
+		inform(sender, "Перезагрузка lang.yml!");
 		
 		for(MPlayer mp : plugin.getLoadedPlayers()) {
 			mp.getConfig().reload();
 		}
 		
-		inform(sender, "Reloaded player yml files!");
+		inform(sender, "Перезагрузка yml файлов игрока!");
 	}
 
 	@Override

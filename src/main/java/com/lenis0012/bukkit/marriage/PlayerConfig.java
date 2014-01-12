@@ -21,7 +21,7 @@ public class PlayerConfig extends YamlConfiguration {
 		try {
 			this.save(this.file);
 		} catch (IOException ex) {
-			Bukkit.getLogger().log(Level.SEVERE, "Cannot save " + file, ex);
+			Bukkit.getLogger().log(Level.SEVERE, "Не могу сохранить " + file, ex);
 		}
 	}
 	
@@ -30,9 +30,9 @@ public class PlayerConfig extends YamlConfiguration {
 			this.load(file);
 		} catch (FileNotFoundException ex) {
 		} catch (IOException ex) {
-			Bukkit.getLogger().log(Level.SEVERE, "Cannot load " + file, ex);
+			Bukkit.getLogger().log(Level.SEVERE, "Не могу закгрузить " + file, ex);
 		} catch (InvalidConfigurationException ex) {
-			Bukkit.getLogger().log(Level.SEVERE, "Cannot load " + file, ex);
+			Bukkit.getLogger().log(Level.SEVERE, "Не могу загрузить " + file, ex);
 		}
 	}
 }

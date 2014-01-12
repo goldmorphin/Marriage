@@ -8,8 +8,8 @@ import com.lenis0012.bukkit.marriage.Marriage;
 
 
 public class EcoUtil {
-	private static String msg = "&7Removed &f${Price} &7from your balance";
-	private static String nem = "&cYou do not have &4${Price} &cin your balance";
+	private static String msg = "&7Списано &f${Price} &7с Вашего баланса.";
+	private static String nem = "&cВы не имеете &4${Price} &cна своём балансе!";
 
 	public static double getPriceFromConfig(String value) {
 		Marriage plugin = Marriage.instance;

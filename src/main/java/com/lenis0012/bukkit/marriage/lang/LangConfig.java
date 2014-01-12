@@ -45,11 +45,11 @@ public class LangConfig extends YamlConfiguration {
 		try {
 			this.load(file);
 		} catch (FileNotFoundException e) {
-			plugin.getLogger().log(Level.SEVERE, "Failed to load lang.yml (not found)", e);
+			plugin.getLogger().log(Level.SEVERE, "Ошибка загрузки lang.yml (не найдено)", e);
 		} catch (IOException e) {
-			plugin.getLogger().log(Level.SEVERE, "Failed to load lang.yml", e);
+			plugin.getLogger().log(Level.SEVERE, "Ошибка загрузки lang.yml", e);
 		} catch (InvalidConfigurationException e) {
-			plugin.getLogger().log(Level.SEVERE, "Failed to load lang.yml (invalid)", e);
+			plugin.getLogger().log(Level.SEVERE, "Ошибка загрузки lang.yml (недействительно)", e);
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class LangConfig extends YamlConfiguration {
 		try {
 			this.save(file);
 		} catch (IOException e) {
-			plugin.getLogger().log(Level.SEVERE, "Failed to save lang.yml", e);
+			plugin.getLogger().log(Level.SEVERE, "Ошибка сохранения lang.yml", e);
 		}
 	}
 	
