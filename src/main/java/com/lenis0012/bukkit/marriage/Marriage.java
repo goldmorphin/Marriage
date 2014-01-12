@@ -51,11 +51,11 @@ public class Marriage extends JavaPlugin {
 		PluginManager pm = this.getServer().getPluginManager();
 		
 		if(this.validVersion(COMPAT_VERSION)) {
-			log.info("[Marriage] Запускаюсь на nms path: " + COMPAT_VERSION);
+			log.info("[Marriage] Запускаюсь на Minecraft версии: " + COMPAT_VERSION);
 		} else {
 			log.severe("[Marriage] Marriage не совместим с версией Minecraft, которую Вы используете!");
 			log.severe("Marriage поцелуйчики отключены :(");
-			IS_COMPATIBLE = true;
+			IS_COMPATIBLE = false;
 		}
 		
 		//register events/commands
