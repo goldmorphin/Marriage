@@ -1,45 +1,45 @@
 name: Marriage
 version: 1.2.4
 main: com.lenis0012.bukkit.marriage.Marriage
-author: lenis0012
-description: A plugin wich provides the function to start a relationship in minecraft.
+author: lenis0012, GoldMorphiN (перевод)
+description: Плагин отношений в Minecraft.
 dev-url: http://dev.bukkit.org/bukkit-mods/marriage-reloaded/
 softdepend: [Vault]
 commands:
   marry:
-    description: Marriage main command.
+    description: Основная команда Marriage.
     usage: /marry <args>
 permissions:
   marry.*:
-    description: Allows all Marriage Commands
+    description: Разрешает все команды плагина
     children:
       marry.admin:
-        description: Allows all admin commands
+        description: Позволяет все админ-команды плагина
         children:
           marry.reload:
-            description: Allows to reload the config files
+            description: Позволяет перезагружать конфиг файл плагина
           marry.priest:
-            description: Allows player to marry 2 orther players.
+            description: Позволяет игроку женить двух других игроков
           marry.chatspy:
-            description: Allows player to view all mchat.
+            description: Позволет (chatspy) сообщения от других игроков 
       marry.default:
-        description: Allows default player commands
+        description: Позволяет все команды по-умолчанию
         children:
           marry.marry:
-            description: Allows to marry with players
+            description: Позволяет женится/выходить замуж
           marry.chat:
-            description: Allows to chat with your partner
+            description: Позволяет чат, с Вашим партнёром
           marry.tp:
-            description: Allows to tp to your partner
+            description: Позволяет телепортироваться к Вашему партнёру
           marry.home:
-            description: Allows to tp to your home if set
+            description: Позволяет телепортироваться домой, если таковой установлен
           marry.sethome:
-            description: Allwos to set your Marriage home
+            description: Позволяет установить точку совместного дома
           marry.gift:
-            description: Allows to gift itesm to your partner
+            description: Позволяет дарить подарки Вашему супругу
           marry.chat:
-            description: Allows to chat with your partner
+            description: Позволяет чат с Вашим партнёром
           marry.child:
-            description: Allows everything with children in marriage.
+            description: Allows everything with children in marriage. //понятие не имею, что это
           marry.seend:
-            description: Allows to see your last login from your partner
+            description: Позволяет видеть последний заход на сервер Вашего супруга
