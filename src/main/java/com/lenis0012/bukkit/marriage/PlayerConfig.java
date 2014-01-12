@@ -30,7 +30,7 @@ public class PlayerConfig extends YamlConfiguration {
 			this.load(file);
 		} catch (FileNotFoundException ex) {
 		} catch (IOException ex) {
-			Bukkit.getLogger().log(Level.SEVERE, "Не могу закгрузить " + file, ex);
+			Bukkit.getLogger().log(Level.SEVERE, "Не могу загрузить " + file, ex);
 		} catch (InvalidConfigurationException ex) {
 			Bukkit.getLogger().log(Level.SEVERE, "Не могу загрузить " + file, ex);
 		}
